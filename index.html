@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CyberNest by Areeb</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: black;
+            color: #00ffcc;
+            text-align: center;
+        }
+
+        header {
+            background: #111;
+            padding: 20px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .section {
+            padding: 40px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #00ffcc;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #00cc99;
+        }
+
+        input {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            width: 200px;
+        }
+
+        footer {
+            background: #111;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>CyberNest by Areeb 🔐</header>
+
+<div class="section">
+    <h2>About This App</h2>
+    <p>This is my personal Cybersecurity Learning Platform.</p>
+</div>
+
+<div class="section">
+    <h2>Password Generator</h2>
+    <input type="number" id="length" placeholder="Enter length">
+    <br><br>
+    <button onclick="generatePassword()">Generate</button>
+    <p id="result"></p>
+</div>
+
+<div class="section">
+    <h2>Linux Basic Commands</h2>
+    <p>ls - List files</p>
+    <p>cd - Change directory</p>
+    <p>pwd - Show current directory</p>
+</div>
+
+<footer>
+    © 2026 CyberNest | Created by Areeb
+</footer>
+
+<script>
+function generatePassword() {
+    var length = document.getElementById("length").value;
+    var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%";
+    var password = "";
+
+    for (var i = 0; i < length; i++) {
+        password += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+
+    document.getElementById("result").innerHTML = password;
+}
+</script>
+
+</body>
+</html>
